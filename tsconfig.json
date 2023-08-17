@@ -22,5 +22,6 @@
     "baseUrl": ".",
     "outDir": "build"
   },
-  "exclude": ["node_modules", "build"]
+  "exclude": ["node_modules", "build"],
+  "files": ["./@types/node/environment.d.ts"]
 }
