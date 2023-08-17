@@ -1,3 +1,6 @@
 # Editor Configs
 .idea/
 .vscode/
+
+# Dependencies
+node_modules/
