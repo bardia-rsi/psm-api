@@ -21,3 +21,11 @@ export const base = {
     updatedAt: { type: Date, default: null },
     deletedAt: { type: Date, default: null }
 }
+
+export const baseDataType = {
+    ...base,
+    note: { type: String, default: null },
+    favorite: { type: Date, default: null },
+    trash: { type: Date, default: null },
+    userId: { type: Schema.Types.ObjectId }
+}
