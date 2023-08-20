@@ -29,3 +29,17 @@ export const sortByKeys = (obj: StringMap) => {
 
     return sortedObj;
 }
+
+export const keysPath = (obj: StringMap, prefix: string = ""): string[] => {
+    return Object.keys(obj).reduce((paths: string[], key: string): string[] => {
+
+        if (isObject(obj[key])) {
+            return [...paths, ...keysPath(obj[key], prefix + key + ".")]
+        }
+
+        paths.push(prefix + key);
+
+        return paths;
+
+    }, []);
+}
