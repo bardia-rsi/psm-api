@@ -1,5 +1,6 @@
-import { Types } from "mongoose";
+import { Document, Types } from "mongoose";
 import { Base, PID, PasswordElement } from "./Bases";
+import { RecursivePartial } from "../types";
 
 interface UserBase {
     personalInfo: {
@@ -58,3 +59,45 @@ export interface UserDefinition extends UserBase, Base {
         }[];
     };
 }
+
+export interface UserDocument extends UserDefinition, Document {}
+
+export interface UserData extends Omit<UserBase & Base, "deletedAt"> {
+    login: LoginBaseObject & {
+        password: {
+            history: PasswordElement[];
+            current: Required<PasswordElement>;
+        };
+        securityQuestions: {
+            pid: PID;
+            question: string;
+            answer: string;
+        }[];
+    };
+}
+
+export interface UserJsonData extends Omit<UserBase & Base, "deletedAt"> {
+    login: LoginBaseObject;
+    accessToken?: string;
+    refreshToken?: string;
+}
+
+// Payloads
+export interface UserCreatePayload extends RecursivePartial<UserBase & Base> {
+    login: {
+        username: string;
+        email: string;
+        phoneNumber: string;
+        password: {
+            current: {
+                content: string;
+            };
+        };
+        securityQuestions: {
+            question: PID;
+            answer: string;
+        }[];
+    }
+}
+
+export interface UserUpdatePayload extends Partial<UserCreatePayload> {}
