@@ -2,6 +2,7 @@ import type { Express } from "express";
 import express from "express";
 // Middlewares
 import morgan from "morgan";
+import useragent from "express-useragent";
 
 const app: Express = express();
 
@@ -11,6 +12,7 @@ const config = (): void => {
 
     // Middlewares
     app.use(morgan("dev"));
+    app.use(useragent.express());
 
 }
 
