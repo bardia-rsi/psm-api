@@ -23,5 +23,5 @@
     "outDir": "build"
   },
   "exclude": ["node_modules", "build"],
-  "files": ["./@types/node/environment.d.ts"]
+  "files": ["./@types/node/environment.d.ts", "./@types/express/custom.d.ts"]
 }
