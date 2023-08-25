@@ -26,6 +26,10 @@ export const create = async (data: UserCreatePayload): Promise<UserData | undefi
             }
         }
 
+        if (data.login?.password.current) {
+            data.login.password.current.content = await hash(data.login.password.current.content, 10);
+        }
+
         const doc: UserDocument | undefined = await new User(data).save();
 
         return doc ? await findOne({ pid: doc.pid }) ?? undefined : undefined;
