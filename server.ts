@@ -1,10 +1,12 @@
 import type { Express } from "express";
 import type { Handler } from "vhost";
 import express from "express";
+import "express-async-errors";
 // Middlewares
 import morgan from "morgan";
 import useragent from "express-useragent";
 import vhost from "vhost";
+import { errorHandler } from "./middlewares/errorHandler";
 // Routes
 import authRoute from "./app/routes/auth";
 import apiRoute from "./app/routes/api";
@@ -24,6 +26,9 @@ const config = (): void => {
     app.use(vhost("auth.localhost", authRoute as unknown as Handler));
     app.use(vhost("api.localhost", apiRoute as unknown as Handler));
     app.use(vhost("media.localhost", mediaRoute as unknown as Handler));
+
+    // Error Handlers
+    app.use(errorHandler);
 
 }
 
