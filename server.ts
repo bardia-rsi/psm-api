@@ -3,6 +3,7 @@ import type { Handler } from "vhost";
 import express from "express";
 import "express-async-errors";
 // Middlewares
+import cors from "cors";
 import morgan from "morgan";
 import useragent from "express-useragent";
 import vhost from "vhost";
@@ -19,6 +20,7 @@ let serverRunning: boolean = false;
 const config = (): void => {
 
     // Middlewares
+    app.use(cors());
     app.use(morgan("dev"));
     app.use(useragent.express());
 
