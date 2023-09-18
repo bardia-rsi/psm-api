@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { json } from "body-parser";
-import { bodyValidator } from "../../../middlewares/bodyValidator";
-import { get, update, remove } from "../../controllers/api/users";
+import { bodyValidator } from "../../../../middlewares/bodyValidator";
+import { get, update, remove } from "../../../controllers/api/private/users";
 
 const router = Router();
 

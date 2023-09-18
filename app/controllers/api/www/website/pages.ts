@@ -6,14 +6,14 @@ export const get = async (req: Request, res: Response): Promise<Response<JSON>> 
     try {
 
         const page: string = req.params.page;
-        const data = (await import("../../../data/www/pages/" + camelCase(page) + ".json")).default;
+        const data = (await import("../../../../../data/www/website/pages/" + camelCase(page) + ".json")).default;
 
         if (!data) {
             return res.status(StatusCodes.NOT_FOUND).end();
         }
 
         if (page === "home" || page === "pricing") {
-            data.plans.slides = (await import("../../../data/www/plans.json")).default;
+            data.plans.slides = (await import("../../../../../data/www/website/plans.json")).default;
         }
 
         return res.status(StatusCodes.OK).json(data);

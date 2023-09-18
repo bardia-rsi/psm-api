@@ -1,10 +1,10 @@
 import type { Request, Response } from "express";
-import type { UserData, UserJsonData } from "../../../types/Data/User";
+import type { UserData, UserJsonData } from "../../../../types/Data/User";
 import { StatusCodes } from "http-status-codes";
 import { omit } from "lodash";
-import { update as modelUpdateMethod, remove as modelRemoveMethod, findOne } from "../../models/User";
-import { updateHandler, getHandler } from "../../../helpers/responseHandler";
-import { logoutHandler } from "../auth/logout";
+import { update as modelUpdateMethod, remove as modelRemoveMethod, findOne } from "../../../models/User";
+import { updateHandler, getHandler } from "../../../../helpers/responseHandler";
+import { logoutHandler } from "../../auth/logout";
 
 export const get = async (req: Request, res: Response): Promise<Response<UserJsonData>> => {
     return getHandler<UserJsonData>(res, async (): Promise<UserJsonData | null> => {

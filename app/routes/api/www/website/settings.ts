@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { get } from "../../../controllers/www/settings";
+import { get } from "../../../../controllers/api/www/website/settings";
 
 const router = Router();
 

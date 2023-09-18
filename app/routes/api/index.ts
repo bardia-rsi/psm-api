@@ -1,7 +1,7 @@
 import { Router } from "express";
 // Routes
-import privateRoutes from "./privateRoutes";
-import www from "./www";
+import privateRoutes from "./private";
+import www from "./www/website";
 import errors from "../errors";
 
 const router = Router();

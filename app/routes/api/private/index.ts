@@ -1,7 +1,7 @@
 import { Router } from "express";
 // Middlewares
-import { accessTokenValidator } from "../../../middlewares/accessTokenValidator";
-import { refreshTokenValidator } from "../../../middlewares/refreshTokenValidator";
+import { accessTokenValidator } from "../../../../middlewares/accessTokenValidator";
+import { refreshTokenValidator } from "../../../../middlewares/refreshTokenValidator";
 // Routes
 import companies from "./companies";
 import contacts from "./contacts";
@@ -10,7 +10,7 @@ import paymentCards from "./paymentCards";
 import questions from "./questions";
 import user from "./users";
 import wifiPasswords from "./wifiPasswords";
-import errors from "../errors";
+import errors from "../../errors";
 
 const router = Router();
 
