@@ -1,0 +1,1 @@
+export type DataTypes = "contact" | "login" | "paymentCard" | "wifiPassword";
