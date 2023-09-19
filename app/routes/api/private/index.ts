@@ -2,6 +2,8 @@ import { Router } from "express";
 // Middlewares
 import { accessTokenValidator } from "../../../../middlewares/accessTokenValidator";
 import { refreshTokenValidator } from "../../../../middlewares/refreshTokenValidator";
+// Controllers
+import { getAllLengths } from "../../../controllers/api/private/items";
 // Routes
 import companies from "./companies";
 import contacts from "./contacts";
@@ -27,6 +29,9 @@ router.use("/user", user);
 router.use("/wifi-passwords", wifiPasswords);
 router.use("/trash", trash);
 router.use("/favorites", favorites);
+
+router.route("/length")
+    .get(getAllLengths());
 
 router.use("*", errors);
 
