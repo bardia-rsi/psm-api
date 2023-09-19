@@ -10,6 +10,7 @@ import paymentCards from "./paymentCards";
 import questions from "./questions";
 import user from "./users";
 import wifiPasswords from "./wifiPasswords";
+import favorites from "./favorites";
 import errors from "../../errors";
 
 const router = Router();
@@ -23,6 +24,8 @@ router.use("/payment-cards", paymentCards);
 router.use("/questions", questions);
 router.use("/user", user);
 router.use("/wifi-passwords", wifiPasswords);
+router.use("/favorites", favorites);
+
 router.use("*", errors);
 
 export default router;
