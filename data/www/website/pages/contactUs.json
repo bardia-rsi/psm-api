@@ -1,1 +1,6 @@
-{"hero": {"title": "contact us", "description": "We’re here to help. Get in touch and let us know how we can help you."}}
+{
+  "hero": {
+    "title": "contact us",
+    "description": "We’re here to help. Get in touch and let us know how we can help you."
+  }
+}

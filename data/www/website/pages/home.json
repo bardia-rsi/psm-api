@@ -1,1 +1,96 @@
-{"hero": {"title": "move fast and securely with the password manager trusted by millions.", "description": "Say goodbye to memorizing passwords. Let us do it for you. PSMis a secure password manager that safely manages your passwords and autofills them across websites and applications.", "links": [{"id": 1, "type": "primary", "variant": "white", "url": "/sign-up", "text": "get started today"}, {"id": 2, "type": "outline", "variant": "white", "url": "/pricing", "text": "view plans & pricing"}], "image": "images/home/mockup.png"}, "features": {"title": {"text": "every day with PSM", "center": false}, "sections": [{"id": 1, "title": "Save information with a click", "description": "Still using sticky notes to remember your sensitive info? Let PSM save it instead. Manage passwords, passkeys, credit cards, and personal information in a single secure place.", "image": "images/home/save-login-details.svg", "reverse": false}, {"id": 2, "title": "Autofill passwords, credit cards, and more", "description": "Shopping online? Booking a trip? Logging in to Twitter? Use the PSM password manager to autofill forms, credit card details, and passwords with a click.", "image": "images/home/easy-autofill.svg", "reverse": true}, {"id": 3, "title": "Share securely", "description": "Need to share work-related passwords, company payment info, or Wi-Fi access? Do so swiftly and securely with PSM. Plain text was not made for secrets.", "image": "images/home/share-securely.svg", "reverse": false}], "link": {"type": "link", "variant": "primary", "url": "/features", "text": "see all features"}}, "useCases": {"title": {"text": "single solution. multiple use cases", "center": true}, "tabs": [{"id": 1, "label": "Monitor breaches", "description": "Stay focused on what matters and let PSM monitor your company accounts and emails for data breaches. Get real-time notifications in case of an emergency.", "image": "images/home/monitor-breaches.svg"}, {"id": 2, "label": "Company-wide settings", "description": "Enforce company-wide password policies or manage access privileges across the organization with PSMBusiness.", "image": "images/home/company-wide-settings.svg"}, {"id": 3, "label": "Access Management", "description": "Save time. Onboard new members to the organization smoothly and securely. Effortlessly give, remove, or reassign access privileges.", "image": "images/home/access-management.svg"}]}, "plans": {"title": {"text": "plans", "center": true}, "link": {"type": "link", "variant": "primary", "url": "/pricing", "text": "compare plans & features"}}}
+{
+  "hero": {
+    "title": "move fast and securely with the password manager trusted by millions.",
+    "description": "Say goodbye to memorizing passwords. Let us do it for you. PSMis a secure password manager that safely manages your passwords and autofills them across websites and applications.",
+    "links": [
+      {
+        "id": 1,
+        "type": "primary",
+        "variant": "white",
+        "url": "/sign-up",
+        "text": "get started today"
+      },
+      {
+        "id": 2,
+        "type": "outline",
+        "variant": "white",
+        "url": "/pricing",
+        "text": "view plans & pricing"
+      }
+    ],
+    "image": "images/home/mockup.png"
+  },
+  "features": {
+    "title": {
+      "text": "every day with PSM",
+      "center": false
+    },
+    "sections": [
+      {
+        "id": 1,
+        "title": "Save information with a click",
+        "description": "Still using sticky notes to remember your sensitive info? Let PSM save it instead. Manage passwords, passkeys, credit cards, and personal information in a single secure place.",
+        "image": "images/home/save-login-details.svg",
+        "reverse": false
+      },
+      {
+        "id": 2,
+        "title": "Autofill passwords, credit cards, and more",
+        "description": "Shopping online? Booking a trip? Logging in to Twitter? Use the PSM password manager to autofill forms, credit card details, and passwords with a click.",
+        "image": "images/home/easy-autofill.svg",
+        "reverse": true
+      },
+      {
+        "id": 3,
+        "title": "Share securely",
+        "description": "Need to share work-related passwords, company payment info, or Wi-Fi access? Do so swiftly and securely with PSM. Plain text was not made for secrets.",
+        "image": "images/home/share-securely.svg",
+        "reverse": false
+      }
+    ],
+    "link": {
+      "type": "link",
+      "variant": "primary",
+      "url": "/features",
+      "text": "see all features"
+    }
+  },
+  "useCases": {
+    "title": {
+      "text": "single solution. multiple use cases",
+      "center": true
+    },
+    "tabs": [
+      {
+        "id": 1,
+        "label": "Monitor breaches",
+        "description": "Stay focused on what matters and let PSM monitor your company accounts and emails for data breaches. Get real-time notifications in case of an emergency.",
+        "image": "images/home/monitor-breaches.svg"
+      },
+      {
+        "id": 2,
+        "label": "Company-wide settings",
+        "description": "Enforce company-wide password policies or manage access privileges across the organization with PSMBusiness.",
+        "image": "images/home/company-wide-settings.svg"
+      },
+      {
+        "id": 3,
+        "label": "Access Management",
+        "description": "Save time. Onboard new members to the organization smoothly and securely. Effortlessly give, remove, or reassign access privileges.",
+        "image": "images/home/access-management.svg"
+      }
+    ]
+  },
+  "plans": {
+    "title": {
+      "text": "plans",
+      "center": true
+    },
+    "link": {
+      "type": "link",
+      "variant": "primary",
+      "url": "/pricing",
+      "text": "compare plans & features"
+    }
+  }
+}

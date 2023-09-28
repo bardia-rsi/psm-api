@@ -1,1 +1,317 @@
-[{"id": 1, "variant": "secondary", "name": "free", "description": "30-day premium trial included", "link": {"type": "outline", "variant": "primary", "url": "/sign-up", "text": "get started"}, "features": [{"id": 1, "icon": "/icons/card.svg", "content": "No credit card required", "disabled": false}, {"id": 2, "icon": "/icons/user.svg", "content": "1 user account", "disabled": false}, {"id": 3, "content": "Autosave & Autofill", "disabled": false}, {"id": 4, "content": "Securely store credit cards and notes", "disabled": false}, {"id": 5, "content": "Stay logged in when switching devices", "disabled": true}, {"id": 6, "content": "Detect weak, reused passwords", "disabled": true}, {"id": 7, "content": "Scan the web for data breaches", "disabled": true}, {"id": 8, "content": "Attach files to items", "disabled": true}, {"id": 9, "content": "Save unlimited passwords", "disabled": false}, {"id": 10, "content": "Import and Export passwords", "disabled": false}, {"id": 11, "content": "Fill forms with Personal Info", "disabled": false}, {"id": 12, "content": "Generate unique passwords", "disabled": false}, {"id": 13, "content": "Automatic sync across devices", "disabled": false}, {"id": 14, "content": "Protect passwords with Multi-factor Authentication", "disabled": false}, {"id": 15, "content": "Share items with people you trust", "disabled": true}, {"id": 16, "content": "Give access to passwords in case of emergency", "disabled": true}, {"id": 17, "content": "Build Trusted Contacts", "disabled": true}]}, {"id": 2, "variant": "primary", "name": "premium", "price": {"regular": 2.99, "discount": 40, "description": "for the first 2 years", "per": "month", "period": 24}, "link": {"type": "primary", "variant": "primary", "url": "/checkout", "text": "get premium plan"}, "features": [{"id": 1, "icon": "/icons/card.svg", "content": "No credit card required", "disabled": false}, {"id": 2, "icon": "/icons/user.svg", "content": "1 user account", "disabled": false}, {"id": 3, "content": "Autosave & Autofill", "disabled": false}, {"id": 4, "content": "Securely store credit cards and notes", "disabled": false}, {"id": 5, "content": "Stay logged in when switching devices", "disabled": false}, {"id": 6, "content": "Detect weak, reused passwords", "disabled": false}, {"id": 7, "content": "Scan the web for data breaches", "disabled": false}, {"id": 8, "content": "Attach files to items", "disabled": false}, {"id": 9, "content": "Save unlimited passwords", "disabled": false}, {"id": 10, "content": "Import and Export passwords", "disabled": false}, {"id": 11, "content": "Fill forms with Personal Info", "disabled": false}, {"id": 12, "content": "Generate unique passwords", "disabled": false}, {"id": 13, "content": "Automatic sync across devices", "disabled": false}, {"id": 14, "content": "Protect passwords with Multi-factor Authentication", "disabled": false}, {"id": 15, "content": "Share items with people you trust", "disabled": false}, {"id": 16, "content": "Give access to passwords in case of emergency", "disabled": false}, {"id": 17, "content": "Build Trusted Contacts", "disabled": false}]}, {"id": 3, "variant": "secondary", "name": "premium", "price": {"regular": 3.99, "discount": 20, "description": "for the first 1 years", "per": "month", "period": 12}, "link": {"type": "outline", "variant": "primary", "url": "/checkout", "text": "get premium plan"}, "features": [{"id": 1, "icon": "/icons/card.svg", "content": "No credit card required", "disabled": false}, {"id": 2, "icon": "/icons/user.svg", "content": "1 user account", "disabled": false}, {"id": 3, "content": "Autosave & Autofill", "disabled": false}, {"id": 4, "content": "Securely store credit cards and notes", "disabled": false}, {"id": 5, "content": "Stay logged in when switching devices", "disabled": false}, {"id": 6, "content": "Detect weak, reused passwords", "disabled": false}, {"id": 7, "content": "Scan the web for data breaches", "disabled": false}, {"id": 8, "content": "Attach files to items", "disabled": false}, {"id": 9, "content": "Save unlimited passwords", "disabled": false}, {"id": 10, "content": "Import and Export passwords", "disabled": false}, {"id": 11, "content": "Fill forms with Personal Info", "disabled": false}, {"id": 12, "content": "Generate unique passwords", "disabled": false}, {"id": 13, "content": "Automatic sync across devices", "disabled": false}, {"id": 14, "content": "Protect passwords with Multi-factor Authentication", "disabled": false}, {"id": 15, "content": "Share items with people you trust", "disabled": false}, {"id": 16, "content": "Give access to passwords in case of emergency", "disabled": false}, {"id": 17, "content": "Build Trusted Contacts", "disabled": false}]}]
+[
+  {
+    "id": 1,
+    "variant": "secondary",
+    "name": "free",
+    "description": "30-day premium trial included",
+    "link": {
+      "type": "outline",
+      "variant": "primary",
+      "url": "/sign-up",
+      "text": "get started"
+    },
+    "features": [
+      {
+        "id": 1,
+        "icon": "/icons/card.svg",
+        "content": "No credit card required",
+        "disabled": false
+      },
+      {
+        "id": 2,
+        "icon": "/icons/user.svg",
+        "content": "1 user account",
+        "disabled": false
+      },
+      {
+        "id": 3,
+        "content": "Autosave & Autofill",
+        "disabled": false
+      },
+      {
+        "id": 4,
+        "content": "Securely store credit cards and notes",
+        "disabled": false
+      },
+      {
+        "id": 5,
+        "content": "Stay logged in when switching devices",
+        "disabled": true
+      },
+      {
+        "id": 6,
+        "content": "Detect weak, reused passwords",
+        "disabled": true
+      },
+      {
+        "id": 7,
+        "content": "Scan the web for data breaches",
+        "disabled": true
+      },
+      {
+        "id": 8,
+        "content": "Attach files to items",
+        "disabled": true
+      },
+      {
+        "id": 9,
+        "content": "Save unlimited passwords",
+        "disabled": false
+      },
+      {
+        "id": 10,
+        "content": "Import and Export passwords",
+        "disabled": false
+      },
+      {
+        "id": 11,
+        "content": "Fill forms with Personal Info",
+        "disabled": false
+      },
+      {
+        "id": 12,
+        "content": "Generate unique passwords",
+        "disabled": false
+      },
+      {
+        "id": 13,
+        "content": "Automatic sync across devices",
+        "disabled": false
+      },
+      {
+        "id": 14,
+        "content": "Protect passwords with Multi-factor Authentication",
+        "disabled": false
+      },
+      {
+        "id": 15,
+        "content": "Share items with people you trust",
+        "disabled": true
+      },
+      {
+        "id": 16,
+        "content": "Give access to passwords in case of emergency",
+        "disabled": true
+      },
+      {
+        "id": 17,
+        "content": "Build Trusted Contacts",
+        "disabled": true
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "variant": "primary",
+    "name": "premium",
+    "price": {
+      "regular": 2.99,
+      "discount": 40,
+      "description": "for the first 2 years",
+      "per": "month",
+      "period": 24
+    },
+    "link": {
+      "type": "primary",
+      "variant": "primary",
+      "url": "/checkout",
+      "text": "get premium plan"
+    },
+    "features": [
+      {
+        "id": 1,
+        "icon": "/icons/card.svg",
+        "content": "No credit card required",
+        "disabled": false
+      },
+      {
+        "id": 2,
+        "icon": "/icons/user.svg",
+        "content": "1 user account",
+        "disabled": false
+      },
+      {
+        "id": 3,
+        "content": "Autosave & Autofill",
+        "disabled": false
+      },
+      {
+        "id": 4,
+        "content": "Securely store credit cards and notes",
+        "disabled": false
+      },
+      {
+        "id": 5,
+        "content": "Stay logged in when switching devices",
+        "disabled": false
+      },
+      {
+        "id": 6,
+        "content": "Detect weak, reused passwords",
+        "disabled": false
+      },
+      {
+        "id": 7,
+        "content": "Scan the web for data breaches",
+        "disabled": false
+      },
+      {
+        "id": 8,
+        "content": "Attach files to items",
+        "disabled": false
+      },
+      {
+        "id": 9,
+        "content": "Save unlimited passwords",
+        "disabled": false
+      },
+      {
+        "id": 10,
+        "content": "Import and Export passwords",
+        "disabled": false
+      },
+      {
+        "id": 11,
+        "content": "Fill forms with Personal Info",
+        "disabled": false
+      },
+      {
+        "id": 12,
+        "content": "Generate unique passwords",
+        "disabled": false
+      },
+      {
+        "id": 13,
+        "content": "Automatic sync across devices",
+        "disabled": false
+      },
+      {
+        "id": 14,
+        "content": "Protect passwords with Multi-factor Authentication",
+        "disabled": false
+      },
+      {
+        "id": 15,
+        "content": "Share items with people you trust",
+        "disabled": false
+      },
+      {
+        "id": 16,
+        "content": "Give access to passwords in case of emergency",
+        "disabled": false
+      },
+      {
+        "id": 17,
+        "content": "Build Trusted Contacts",
+        "disabled": false
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "variant": "secondary",
+    "name": "premium",
+    "price": {
+      "regular": 3.99,
+      "discount": 20,
+      "description": "for the first 1 years",
+      "per": "month",
+      "period": 12
+    },
+    "link": {
+      "type": "outline",
+      "variant": "primary",
+      "url": "/checkout",
+      "text": "get premium plan"
+    },
+    "features": [
+      {
+        "id": 1,
+        "icon": "/icons/card.svg",
+        "content": "No credit card required",
+        "disabled": false
+      },
+      {
+        "id": 2,
+        "icon": "/icons/user.svg",
+        "content": "1 user account",
+        "disabled": false
+      },
+      {
+        "id": 3,
+        "content": "Autosave & Autofill",
+        "disabled": false
+      },
+      {
+        "id": 4,
+        "content": "Securely store credit cards and notes",
+        "disabled": false
+      },
+      {
+        "id": 5,
+        "content": "Stay logged in when switching devices",
+        "disabled": false
+      },
+      {
+        "id": 6,
+        "content": "Detect weak, reused passwords",
+        "disabled": false
+      },
+      {
+        "id": 7,
+        "content": "Scan the web for data breaches",
+        "disabled": false
+      },
+      {
+        "id": 8,
+        "content": "Attach files to items",
+        "disabled": false
+      },
+      {
+        "id": 9,
+        "content": "Save unlimited passwords",
+        "disabled": false
+      },
+      {
+        "id": 10,
+        "content": "Import and Export passwords",
+        "disabled": false
+      },
+      {
+        "id": 11,
+        "content": "Fill forms with Personal Info",
+        "disabled": false
+      },
+      {
+        "id": 12,
+        "content": "Generate unique passwords",
+        "disabled": false
+      },
+      {
+        "id": 13,
+        "content": "Automatic sync across devices",
+        "disabled": false
+      },
+      {
+        "id": 14,
+        "content": "Protect passwords with Multi-factor Authentication",
+        "disabled": false
+      },
+      {
+        "id": 15,
+        "content": "Share items with people you trust",
+        "disabled": false
+      },
+      {
+        "id": 16,
+        "content": "Give access to passwords in case of emergency",
+        "disabled": false
+      },
+      {
+        "id": 17,
+        "content": "Build Trusted Contacts",
+        "disabled": false
+      }
+    ]
+  }
+]
