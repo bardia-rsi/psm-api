@@ -17,10 +17,6 @@ export const create = async (data: LoginCreatePayload): Promise<LoginData | unde
             return undefined;
         }
 
-        if (data.password) {
-            Object.assign(data, { password: { current: { content: data.password } } });
-        }
-
         const doc: LoginDocument | undefined = await new Login({ ...data, company: id }).save();
 
         return doc ? (await doc.populate("company", "-createdAt -updatedAt")).toObject() : undefined;
@@ -49,10 +45,6 @@ export const update = async (pid: PID, data: LoginUpdatePayload): Promise<LoginD
 
         if (!doc) {
             return null;
-        }
-
-        if (data.password) {
-            Object.assign(data, { password: { current: { content: data.password } } });
         }
 
         updater(doc, data);

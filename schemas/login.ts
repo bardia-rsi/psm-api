@@ -1,10 +1,5 @@
 import joi from "joi";
-import { BaseDataType, pid, url, email, phoneNumber, name, address } from "./common/properties";
-
-const securityQuestions = {
-    question: joi.string().trim().max(256),
-    answer: joi.string().trim().max(64)
-}
+import { BaseDataType, pid, url, email, phoneNumber } from "./common/properties";
 
 const base = {
     ...BaseDataType,
@@ -13,14 +8,7 @@ const base = {
     email,
     password: joi.string().max(2048),
     username: joi.string().lowercase().trim().max(128),
-    phoneNumber,
-    securityQuestions: joi.array().items(joi.object({
-        question: securityQuestions.question.required(),
-        answer: securityQuestions.answer.required()
-    })),
-    name,
-    gender: joi.string().trim().max(64),
-    address
+    phoneNumber
 }
 
 export const create: joi.ObjectSchema = joi.object({
@@ -29,10 +17,4 @@ export const create: joi.ObjectSchema = joi.object({
     url: base.url.required(),
 }).or("email", "username", "phoneNumber");
 
-export const update: joi.ObjectSchema = joi.object({
-    ...base,
-    securityQuestions: joi.object({
-        ...securityQuestions,
-        pid: pid.required()
-    })
-});
+export const update: joi.ObjectSchema = joi.object(base);

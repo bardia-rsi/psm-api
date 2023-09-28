@@ -1,29 +1,15 @@
 import type { LoginDefinition } from "../../types/Data/Login";
 import { Schema } from "mongoose";
-import { baseDataType, pid, createdAt } from "./common/bases";
+import { baseDataType } from "./common/bases";
 
 export const loginSchema = new Schema<LoginDefinition>({
     ...baseDataType,
     company: { type: Schema.Types.ObjectId, required: true, ref: "Company" },
     url: { type: String, required: true },
     email: { type: String, default: null },
-    password: {
-        history: [{
-            pid,
-            content: { type: String, required: true },
-            createdAt
-        }]
-    },
+    password: { type: String, required: true },
     username: { type: String, default: null },
     phoneNumber: { type: String, default: null },
-    securityQuestions: [{
-        pid,
-        question: { type: String, required: true },
-        answer: { type: String, required: true },
-    }],
-    name: { type: String, default: null },
-    gender: { type: String, default: null },
-    address: { type: String, default: null },
     lastUsed: { type: Date, default: null }
 });
 
@@ -45,18 +31,3 @@ loginSchema.index(
         }
     }
 );
-
-// Virtual fields
-loginSchema.virtual<LoginDefinition>("password.current")
-    .get<LoginDefinition>(function (): object {
-        return this.password.history[this.password.history.length - 1];
-    })
-    .set<LoginDefinition>(function (value: { content: string }) {
-
-        if (!this.password.history) {
-            this.password.history = [];
-        }
-
-        this.password.history.push({ content: value.content });
-
-    });
