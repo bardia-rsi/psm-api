@@ -21,7 +21,7 @@ const config = (): void => {
 
     // Middlewares
     app.use(cors());
-    app.use(morgan("dev"));
+    app.use(morgan(process.env.LOG_FORMAT));
     app.use(useragent.express());
 
     // Routes

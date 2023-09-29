@@ -11,6 +11,7 @@ declare global {
             REFRESH_TOKEN_EXPIRATION_PERIOD: string;
             ACCESS_TOKEN_SECRET: string;
             ACCESS_TOKEN_EXPIRATION_PERIOD: string;
+            readonly LOG_FORMAT: string;
         }
     }
 }
