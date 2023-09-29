@@ -25,9 +25,9 @@ const config = (): void => {
     app.use(useragent.express());
 
     // Routes
-    app.use(vhost("auth.localhost", authRoute as unknown as Handler));
-    app.use(vhost("api.localhost", apiRoute as unknown as Handler));
-    app.use(vhost("media.localhost", mediaRoute as unknown as Handler));
+    app.use(vhost(`auth.${process.env.DOMAIN_NAME}`, authRoute as unknown as Handler));
+    app.use(vhost(`api.${process.env.DOMAIN_NAME}`, apiRoute as unknown as Handler));
+    app.use(vhost(`media.${process.env.DOMAIN_NAME}`, mediaRoute as unknown as Handler));
 
     // Error Handlers
     app.use(errorHandler);
@@ -42,8 +42,8 @@ export const start = (): void => {
 
     config();
 
-    app.listen(process.env.PORT, () => {
-        console.log(`Server started on port ${process.env.PORT}`);
+    app.listen(Number(process.env.HOST_PORT), process.env.HOST_URL, () => {
+        console.log(`Server started on ${process.env.HOST_URL}:${process.env.HOST_PORT}`);
     });
 
     serverRunning = true;
