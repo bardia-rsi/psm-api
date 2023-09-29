@@ -1,6 +1,6 @@
 import { Redis } from "ioredis";
 
-const redis = new Redis();
+const redis = new Redis(process.env.REDIS_URL);
 
 redis.on("connect", () => console.log("Connection has been established successfully to the Redis."));
 
