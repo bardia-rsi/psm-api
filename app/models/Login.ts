@@ -4,14 +4,14 @@ import type { PID } from "../../types/Data/Bases";
 import { Model, model } from "mongoose";
 import { loginSchema } from "../../database/migrations/login";
 import { updater } from "../../helpers/docUpdater";
-import { _id } from "./Company";
+import { getObjectIdByUrl } from "../../helpers/company";
 
 const Login: Model<LoginDefinition> = model("Login", loginSchema);
 
 export const create = async (data: LoginCreatePayload): Promise<LoginData | undefined> => {
     try {
 
-        const id: Types.ObjectId | null = await _id(data.company);
+        const id: Types.ObjectId | null = await getObjectIdByUrl(data.url, false);
 
         if (!id) {
             return undefined;
@@ -29,22 +29,23 @@ export const create = async (data: LoginCreatePayload): Promise<LoginData | unde
 export const update = async (pid: PID, data: LoginUpdatePayload): Promise<LoginData | null> => {
     try {
 
-        if (data.company) {
+        const doc: LoginDocument | null = await Login.findOne({ pid, deletedAt: null });
+        let id: Types.ObjectId | null = null;
 
-            const id: Types.ObjectId | null = await _id(data.company);
+        if (!doc) {
+            return null;
+        }
+
+        if (data.url) {
+
+            id = await getObjectIdByUrl(data.url, false);
 
             if (!id) {
                 return null;
             }
 
-            data.company = id.toString();
+            doc.company = id;
 
-        }
-
-        const doc: LoginDocument | null = await Login.findOne({ pid, deletedAt: null });
-
-        if (!doc) {
-            return null;
         }
 
         updater(doc, data);
