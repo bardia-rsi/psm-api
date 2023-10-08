@@ -9,7 +9,7 @@ export const paymentCardSchema = new Schema<PaymentCardDefinition>({
     cardNumber: { type: String, required: true },
     password: { type: String, required: true },
     cvv2: { type: String, required: true },
-    expiration: { type: Date, required: true }
+    expiration: { type: String, required: true }
 });
 
 // Indexes
