@@ -4,7 +4,7 @@ import { baseDataType } from "./common/bases";
 
 export const paymentCardSchema = new Schema<PaymentCardDefinition>({
     ...baseDataType,
-    bank: { type: Schema.Types.ObjectId, required: true, ref: "Company" },
+    bank: { type: Schema.Types.ObjectId, default: null, ref: "Company" },
     owner: { type: String, required: true },
     cardNumber: { type: String, required: true },
     password: { type: String, required: true },

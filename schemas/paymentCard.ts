@@ -39,7 +39,6 @@ const base = {
 
 export const create: joi.ObjectSchema = joi.object({
     ...base,
-    bank: base.bank.required(),
     owner: base.owner.required(),
     cardNumber: base.cardNumber.required(),
     cvv2: base.cvv2.required(),
