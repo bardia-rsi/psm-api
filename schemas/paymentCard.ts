@@ -15,7 +15,9 @@ export const create: joi.ObjectSchema = joi.object({
     ...base,
     bank: base.bank.required(),
     owner: base.owner.required(),
-    cardNumber: base.cardNumber.required()
+    cardNumber: base.cardNumber.required(),
+    cvv2: base.cvv2.required(),
+    expiration: base.expiration.required()
 });
 
 export const update: joi.ObjectSchema = joi.object(base);

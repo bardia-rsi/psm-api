@@ -7,9 +7,9 @@ export const paymentCardSchema = new Schema<PaymentCardDefinition>({
     bank: { type: Schema.Types.ObjectId, required: true, ref: "Company" },
     owner: { type: String, required: true },
     cardNumber: { type: String, required: true },
-    password: { type: String, default: null },
-    cvv2: { type: String, default: null },
-    expiration: { type: Date, default: null }
+    password: { type: String, required: true },
+    cvv2: { type: String, required: true },
+    expiration: { type: Date, required: true }
 });
 
 // Indexes
