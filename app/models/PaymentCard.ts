@@ -4,20 +4,17 @@ import type { PID } from "../../types/Data/Bases";
 import { Model, model } from "mongoose";
 import { paymentCardSchema } from "../../database/migrations/paymentCard";
 import { updater } from "../../helpers/docUpdater";
-import { _id } from "./Company";
+import { getObjectIdByCardNumber } from "../../helpers/company";
 
 const PaymentCard: Model<PaymentCardDefinition> = model("PaymentCard", paymentCardSchema);
 
 export const create = async (data: PaymentCardCreatePayload): Promise<PaymentCardData | undefined> => {
     try {
 
-        const id: Types.ObjectId | null = await _id(data.bank);
-
-        if (!id) {
-            return undefined;
-        }
-
-        const doc: PaymentCardDocument | undefined = await new PaymentCard({ ...data, bank: id }).save();
+        const doc: PaymentCardDocument | undefined = await new PaymentCard({
+            ...data,
+            bank: await getObjectIdByCardNumber(data.cardNumber)
+        }).save();
 
         return doc ? (await doc.populate("bank", "-createdAt -updatedAt")).toObject() : undefined;
 
@@ -29,22 +26,14 @@ export const create = async (data: PaymentCardCreatePayload): Promise<PaymentCar
 export const update = async (pid: PID, data: PaymentCardUpdatePayload): Promise<PaymentCardData | null> => {
     try {
 
-        if (data.bank) {
-
-            const id: Types.ObjectId | null = await _id(data.bank);
-
-            if (!id) {
-                return null;
-            }
-
-            data.bank = id.toString();
-
-        }
-
         const doc: PaymentCardDocument | null = await PaymentCard.findOne({ pid, deletedAt: null });
 
         if (!doc) {
             return null;
+        }
+
+        if (data.cardNumber) {
+            doc.bank = await getObjectIdByCardNumber(data.cardNumber);
         }
 
         updater(doc, data);

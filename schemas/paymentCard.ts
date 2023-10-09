@@ -1,9 +1,8 @@
 import joi from "joi";
-import { BaseDataType, pid, name } from "./common/properties";
+import { BaseDataType, name } from "./common/properties";
 
 const base = {
     ...BaseDataType,
-    bank: pid,
     owner: name,
     cardNumber: joi.string().trim().max(16).creditCard(),
     password: joi.string().min(4).max(8).pattern(/^\d+$/).messages({"string.pattern.base": `"Password" must only contain numbers.`}),
