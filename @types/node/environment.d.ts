@@ -5,6 +5,7 @@ declare global {
             readonly DOMAIN_NAME: string;
             readonly HOST_PORT: string;
             readonly HOST_URL: string;
+            readonly ORIGINS: string;
             readonly MONGO_URL: string;
             readonly REDIS_URL: string;
             readonly REFRESH_TOKEN_SECRET: string;

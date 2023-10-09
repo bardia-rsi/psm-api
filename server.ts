@@ -20,7 +20,18 @@ let serverRunning: boolean = false;
 const config = (): void => {
 
     // Middlewares
-    app.use(cors());
+    app.use(cors({
+        origin: function (origin, callback) {
+            if (!origin || process.env.ORIGINS.indexOf(origin) !== -1) {
+                callback(null, true);
+            } else {
+                callback(new Error("Not allowed by CORS"));
+            }
+        },
+        methods: "GET,PUT,POST,DELETE",
+        preflightContinue: false,
+        optionsSuccessStatus: 204
+    }));
     app.use(morgan(process.env.LOG_FORMAT));
     app.use(useragent.express());
 
