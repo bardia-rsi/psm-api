@@ -8,8 +8,8 @@ const base = {
     logo: joi.string(),
     colors: joi.object({
         logo: joi.object({
-            light: color,
-            dark: color
+            light: color.allow(null),
+            dark: color.allow(null)
         }),
         bg: joi.object({
             light: color,
