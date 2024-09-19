@@ -18,6 +18,9 @@ export const logoutHandler = async (req: Request, res: Response): Promise<Respon
         return res.status(StatusCodes.INTERNAL_SERVER_ERROR).end();
     }
 
+    res.clearCookie("refresh_token", { domain: process.env.DOMAIN_NAME, path: "/" });
+    res.clearCookie("access_token", { domain: process.env.DOMAIN_NAME, path: "/" });
+
     return res.status(StatusCodes.NO_CONTENT).end();
 
 }
