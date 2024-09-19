@@ -4,6 +4,12 @@ export type CreatedAt = Date;
 
 export type PID = string;
 
+export interface PasswordElement {
+    pid?: PID;
+    content: string;
+    createdAt?: CreatedAt;
+}
+
 export interface Base {
     pid: PID;
     createdAt: CreatedAt;
