@@ -1,12 +1,13 @@
 import type { Request, Response } from "express";
-import type { UserData, UserJsonData } from "../../../types/Data/User";
+import type { UserData } from "../../../types/Data/User";
+import type { AuthenticationResponse } from "../../../types/Response";
 import { StatusCodes } from "http-status-codes";
 import { compare } from "bcrypt";
 import { omit, findKey } from "lodash";
 import { findOne } from "../../models/User";
-import { createRefreshToken, createAccessToken, storeRefreshToken } from "../../../helpers/token";
+import { authenticate } from "../../../helpers/authenticate";
 
-export const loginHandler = async (req: Request, res: Response): Promise<Response<UserJsonData | void>> => {
+export const loginHandler = async (req: Request, res: Response): Promise<Response<AuthenticationResponse>> => {
 
     // Check the useragent
     if (!req.useragent) {
@@ -37,17 +38,6 @@ export const loginHandler = async (req: Request, res: Response): Promise<Respons
         });
     }
 
-    const refreshToken: string = createRefreshToken(user.pid, req.useragent.os);
-    const accessToken: string = createAccessToken(refreshToken);
-
-    if (!(await storeRefreshToken(user.pid, refreshToken))) {
-        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).end();
-    }
-
-    return res.status(StatusCodes.OK).json({
-        ...omit(user, ["login.password", "login.securityQuestions"]),
-        refreshToken,
-        accessToken
-    });
+    return authenticate(req, res, user.pid, true);
 
 }
