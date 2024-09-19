@@ -1,10 +1,8 @@
-import type { StringMap } from "../types/Base";
-
 export const isObject = (v: any): boolean => Object.prototype.toString.call(v) === "[object Object]";
 
-export const sortByKeys = (obj: StringMap) => {
+export const sortByKeys = (obj: Record<string, any>) => {
 
-    const sortedObj: StringMap = {};
+    const sortedObj: Record<string, any> = {};
 
     Object.keys(obj).sort().forEach((key: string) => {
 
@@ -30,7 +28,7 @@ export const sortByKeys = (obj: StringMap) => {
     return sortedObj;
 }
 
-export const keysPath = (obj: StringMap, prefix: string = ""): string[] => {
+export const keysPath = (obj: Record<string, any>, prefix: string = ""): string[] => {
     return Object.keys(obj).reduce((paths: string[], key: string): string[] => {
 
         if (isObject(obj[key])) {

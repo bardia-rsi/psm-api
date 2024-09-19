@@ -3,12 +3,11 @@ import type { Types } from "mongoose";
 import type { FilterQuery } from "mongoose";
 import type { ItemData } from "../../../../types/Data/Item";
 import type { DataTypes, DataTypesPlural } from "../../../../types/DataTypes";
-import type { DictionaryUnion } from "../../../../types/Base";
 import { upperFirst, camelCase, orderBy } from "lodash";
 import { getHandler } from "../../../../helpers/responseHandler";
 import { _id } from "../../../models/User";
 
-interface Lengths extends DictionaryUnion<DataTypesPlural | "all" | "trash" | "favorites", number> {}
+interface Lengths extends Record<DataTypesPlural | "all" | "trash" | "favorites", number> {}
 
 const types: DataTypes[] = ["contact", "login", "paymentCard", "wifiPassword"];
 const typesPlural: DataTypesPlural[] = ["contacts", "logins", "paymentCards", "wifiPasswords"];

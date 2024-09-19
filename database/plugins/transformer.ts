@@ -1,9 +1,8 @@
 import type { Schema } from "mongoose";
-import type { StringMap } from "../../types/Base";
 import { isObject, sortByKeys } from "../../utils/object";
 import { sensitiveFields } from "../../types/SensitiveFields";
 
-const removeSensitiveFields = (doc: StringMap): object => {
+const removeSensitiveFields = (doc: Record<string, any>): object => {
     sensitiveFields.forEach((field: string) => {
 
         delete doc?.[field];

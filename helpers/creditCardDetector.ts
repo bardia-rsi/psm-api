@@ -1,6 +1,4 @@
-import { StringMap } from "../types/Base";
-
-const banks: StringMap = {
+const banks: Record<string, string> = {
     "627412": "Eghtesad Novin",
     "627381": "Sepah", // Ansar
     "505785": "Iran Zamin",
