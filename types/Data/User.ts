@@ -1,6 +1,5 @@
 import { Document, Types } from "mongoose";
 import { Base, PID, PasswordElement } from "./Bases";
-import { RecursivePartial } from "../types";
 
 interface UserBase {
     personalInfo: {
@@ -83,7 +82,7 @@ export interface UserJsonData extends Omit<UserBase & Base, "deletedAt"> {
 }
 
 // Payloads
-export interface UserCreatePayload extends RecursivePartial<UserBase & Base> {
+export interface UserCreatePayload extends Partial<UserBase & Base> {
     login: {
         username: string;
         email: string;

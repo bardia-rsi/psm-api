@@ -1,6 +1,5 @@
 import { Document } from "mongoose";
 import { Base } from "./Bases";
-import { RecursivePartial } from "../types";
 
 interface CompanyBase {
     name: string;
@@ -29,4 +28,4 @@ export interface CompanyData extends Omit<CompanyDefinition, "deletedAt"> {}
 // Payloads
 export interface CompanyCreatePayload extends CompanyBase {}
 
-export interface CompanyUpdatePayload extends RecursivePartial<CompanyCreatePayload> {}
+export interface CompanyUpdatePayload extends Partial<CompanyCreatePayload> {}
