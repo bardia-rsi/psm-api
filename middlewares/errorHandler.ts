@@ -1,7 +1,7 @@
 import type { Request, Response, NextFunction } from "express";
 import { StatusCodes } from "http-status-codes"
 import { last } from "lodash";
-import { sensitiveFields } from "../types/SensitiveFields";
+import { sensitiveFields } from "../config/sensitiveFields";
 
 export const errorHandler = (err: Error | any, _: Request, res: Response, __: NextFunction): Response => {
 

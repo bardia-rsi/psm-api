@@ -1,6 +1,6 @@
 import type { Schema } from "mongoose";
 import { isObject, sortByKeys } from "../../utils/object";
-import { sensitiveFields } from "../../types/SensitiveFields";
+import { sensitiveFields } from "../../config/sensitiveFields";
 
 const removeSensitiveFields = (doc: Record<string, any>): object => {
     sensitiveFields.forEach((field: string) => {
