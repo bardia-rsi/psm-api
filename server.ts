@@ -30,6 +30,7 @@ const config = (): void => {
         },
         methods: "GET,PUT,POST,DELETE",
         preflightContinue: false,
+        credentials: true,
         optionsSuccessStatus: 204
     }));
     app.use(morgan(process.env.LOG_FORMAT));

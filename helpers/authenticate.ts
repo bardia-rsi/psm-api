@@ -19,12 +19,12 @@ const authenticate = async (
         "psm_refresh_token",
         refreshToken,
         {
-            maxAge: Number(process.env.REFRESH_TOKEN_EXPIRATION_PERIOD),
-            expires: new Date(Date.now() + Number(process.env.REFRESH_TOKEN_EXPIRATION_PERIOD)),
-            httpOnly: true,
+            expires: new Date(Date.now() + Number(process.env.REFRESH_TOKEN_EXPIRATION_PERIOD) * 1000),
+            httpOnly: process.env.NODE_ENV === "production",
             secure: process.env.NODE_ENV === "production",
-            signed: true,
-            domain: process.env.DOMAIN_NAME
+            path: "/",
+            sameSite: "lax",
+            domain: process.env.NODE_ENV === "production" ? `.${process.env.DOMAIN_NAME}` : undefined,
         }
     );
 
