@@ -36,7 +36,7 @@ export const errorHandler = (err: Error | any, _: Request, res: Response, __: Ne
         if (keys.length > 2) {
 
             const fields: string[] = keys
-                .filter(key => !sensitiveFields.includes(key))
+                .filter(key => !(key in sensitiveFields))
                 .filter(key => err.keyValue[key] !== null)
                 .map(key => `'${key}'`);
 
